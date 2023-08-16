@@ -74,7 +74,7 @@ console.log("Matriz Inversa: " + matrizInversa);
 console.log("- PALINDROMOS -");
 var palabra = "Anita lava la Tina"
 palabra = palabra.toLowerCase().replaceAll(" ", "");
-const reversa = palabra.split("").reverse().join("");
+var reversa = palabra.split("").reverse().join("");
 var palindromo;
 if (palabra===reversa) {
     palindromo="si"
@@ -84,5 +84,56 @@ if (palabra===reversa) {
 console.log(palabra,"=", reversa, "?");
 console.log("palindromo: " + palindromo );
 
+// TAREA 4
+console.log("- EJERCICIOS ARRAYS -");
+
+var array=[2,3,1,10,29,8,30,9,45,6,20]
+console.log("array: "+ array)
+// probando las funciones
+console.log("suma = "+ sumaArray(array));
+console.log("[min,max] = "+minMax(array));
+console.log("promedio: " + promedio(array));
+console.log("pares: " + pares(array));
+console.log("encontrado? " + encontrar(100,array))
 
 
+// Funcion que sume los valores de un array
+function sumaArray(a) {
+    var suma=0;
+    for (i = 0; i < a.length; i++) {
+        suma = a[i] + suma;
+    }
+    return suma;
+}
+
+// Regresar el valor minimo y maximo del arreglo
+function minMax(a) {
+    var valores = [];
+    valores[0] = Math.min(...a);
+    valores[1] = Math.max(...a);
+    return valores;
+}
+
+// Calcular promedio de un Array 
+function promedio(a) {
+    var suma = sumaArray(a);
+    var numElementos = a.length;
+    var promedio = suma/numElementos;
+    promedio=promedio.toFixed(2);
+    return promedio;
+}
+
+function pares(a) {
+    var pares = [];
+    for (i = 0; i < a.length; i++) {
+        if ((a[i] % 2)==0){
+            pares.push(a[i]);
+        }
+    }
+    return pares; 
+}
+
+function encontrar(num, a) {
+    var encontrado = a.includes(num);
+    return encontrado;
+}
