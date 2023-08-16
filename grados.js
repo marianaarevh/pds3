@@ -70,4 +70,19 @@ for (i=length-1; i>=0; i--) {
 }
 console.log("Matriz Inversa: " + matrizInversa);
 
+// TAREA 3 - PALINDROMOS
+console.log("- PALINDROMOS -");
+var palabra = "Anita lava la Tina"
+palabra = palabra.toLowerCase().replaceAll(" ", "");
+const reversa = palabra.split("").reverse().join("");
+var palindromo;
+if (palabra===reversa) {
+    palindromo="si"
+} else {
+    palindromo="no"
+}
+console.log(palabra,"=", reversa, "?");
+console.log("palindromo: " + palindromo );
+
+
 
