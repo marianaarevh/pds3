@@ -70,7 +70,7 @@ for (i=length-1; i>=0; i--) {
 }
 console.log("Matriz Inversa: " + matrizInversa);
 
-// TAREA 3 - PALINDROMOS
+// TAREA 3: PALINDROMOS
 console.log("- PALINDROMOS -");
 var palabra = "Anita lava la Tina"
 palabra = palabra.toLowerCase().replaceAll(" ", "");
@@ -84,10 +84,10 @@ if (palabra===reversa) {
 console.log(palabra,"=", reversa, "?");
 console.log("palindromo: " + palindromo );
 
-// TAREA 4
+// TAREA 4: ARRAYS
 console.log("- EJERCICIOS ARRAYS -");
 
-var array=[2,3,1,10,29,8,30,9,45,6,20]
+var array=[3,5,3,8,2,8,3,5];
 console.log("array: "+ array)
 // probando las funciones
 console.log("suma = "+ sumaArray(array));
@@ -95,6 +95,8 @@ console.log("[min,max] = "+minMax(array));
 console.log("promedio: " + promedio(array));
 console.log("pares: " + pares(array));
 console.log("encontrado? " + encontrar(100,array))
+//console.log("valores unicos: " + unicos(array));
+
 
 
 // Funcion que sume los valores de un array
@@ -137,3 +139,44 @@ function encontrar(num, a) {
     var encontrado = a.includes(num);
     return encontrado;
 }
+
+// TAREA 5: OBJETOS
+
+// crear objeto que represente a una persona con propiedades como nombre, edad y profesion
+var persona = {
+    nombre: "Diego",
+    edad: 24,
+    profesion:"Arquitecto",
+};
+
+console.log(persona.nombre);
+
+// un objeto que representa a un libro con propiedades como titulo y autor,
+// acceder e imprimir el titulo del libro
+
+let libro = {
+    titulo: "Una habitacion propia",
+    autor:"Virginia Woolf",
+};
+
+console.log(libro.titulo);
+
+// Modifica la propiedad del autor a otro nombre
+console.log(libro.autor);
+libro.autor="Maria Lopez"
+console.log(libro.autor);
+
+// Dado un objeto que representa a una mascota con propiedades como nombre, raza y edad, 
+// utiliza la destructuración para obtener y mostrar el nombre y la edad de la mascota.
+
+let mascota = {
+    nombre:"Toby",
+    raza:"pastor aleman",
+    edad:3,
+};
+
+let {nombre, raza, edad} = mascota;
+console.log(nombre);
+console.log(raza);
+console.log(edad);
+
