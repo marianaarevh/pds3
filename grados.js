@@ -89,14 +89,16 @@ console.log("- EJERCICIOS ARRAYS -");
 
 var array=[3,5,3,8,2,8,3,5];
 console.log("array: "+ array)
+
 // probando las funciones
 console.log("suma = "+ sumaArray(array));
 console.log("[min,max] = "+minMax(array));
 console.log("promedio: " + promedio(array));
 console.log("pares: " + pares(array));
-console.log("encontrado? " + encontrar(100,array))
-//console.log("valores unicos: " + unicos(array));
-
+console.log("array ordenado: " + ordenar(array));
+console.log("encontrado? " + encontrar(2,array));
+console.log("contador(numero especifico): " + contarNum(8,array));
+console.log("valores unicos: " + unicos(array));
 
 
 // Funcion que sume los valores de un array
@@ -125,6 +127,7 @@ function promedio(a) {
     return promedio;
 }
 
+// devuelve un array con solo los pares
 function pares(a) {
     var pares = [];
     for (i = 0; i < a.length; i++) {
@@ -135,10 +138,43 @@ function pares(a) {
     return pares; 
 }
 
+// ordenar un array de forma ascendente
+function ordenar(a) {
+    return a.sort(function(a, b) {
+      return a - b;
+    });
+  }
+
+// funcion que toma un array y un valor como entrada y determina si el valor esta presente en el array
 function encontrar(num, a) {
     var encontrado = a.includes(num);
     return encontrado;
 }
+
+// funcion que cuente cuantas veces aparece un valor especifico en un array
+function contarNum(num,a) {
+    let contador = 0;
+    for (i = 0; i < a.length; i++) {
+        if (a[i]==num) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+// toma un array como entrada y devuelve un array con los elementos que aparecen una sola vez
+function unicos(a) {
+    var valoresUnicos = [];
+    for (let i = 0; i < a.length; i++) {
+        x = contarNum(a[i],a);
+        if (x==1) {
+            valoresUnicos.push(a[i]);
+        }
+    }
+    return valoresUnicos;
+}
+
+
 
 // TAREA 5: OBJETOS
 
@@ -179,4 +215,3 @@ let {nombre, raza, edad} = mascota;
 console.log(nombre);
 console.log(raza);
 console.log(edad);
-
