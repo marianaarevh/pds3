@@ -215,3 +215,66 @@ let {nombre, raza, edad} = mascota;
 console.log(nombre);
 console.log(raza);
 console.log(edad);
+
+// TAREA 5: FUNCIONES
+
+// definir una funcion
+// funcion llamada 'saludar' que tome un nombre como parametro y devuelva un saludo a ese nombre
+function saludar(nombre) {
+    saludo="Saludos a "+nombre;
+    return saludo;
+}
+
+console.log("1. Funcion saludar: " + saludar("Mariana"));
+
+// funcion flecha
+let saludarFlecha = (nombre) => ("Saludos a " + nombre);
+
+console.log("2. Funcion saludar (flecha): " + saludarFlecha("Mariana"));
+
+
+// Definir una función llamada "operar" que tome tres parámetros: dos números y una función.  
+// La función debe aplicar la función recibida a los dos números y devolver el resultado. 
+
+function operar(num1, num2, funcion) {
+    return funcion(num1, num2);
+  }
+
+const resultado = operar(3, 5, function(num1,num2) {
+    return (num1*num2);
+})
+
+console.log("3. Funcion anonima como argumento: "+resultado)
+
+// Dado un array de números, usar la función "map" para crear un nuevo array que contenga  el doble 
+// de cada número en el array original. Usar una función flecha.
+
+let dobleArray = array.map(num => (num*2));
+console.log("4. Doble array: "+dobleArray);
+console.log("   Array orginal: "+array);
+
+// Dado un array de nombres, usar la función "filter" para crear un nuevo array que contenga 
+// solo los nombres que tengan más de 5 letras. Usar una función anónima.
+
+let nombres = ["Mariana", "Diego", "Luis", "Camila", "Josefina", "Fernando", "Elsa", "Lucia"];
+let nombresLargos=nombres.filter(function(nombre) {
+    return nombre.length > 5;
+});
+
+console.log("5. Nombre + de 5 letras: " + nombresLargos);
+console.log("Todos los nombres: " + nombres);
+
+
+// EJERCICIO: salto de la rana
+
+function cant(x,y,d){
+    let recorrido = x;
+    let saltos = 0;
+    while (recorrido < y) {
+        recorrido = recorrido + d;
+        saltos++;
+    }
+    return saltos;
+}
+
+console.log("saltos: ", cant(10,85,30));
