@@ -264,7 +264,6 @@ let nombresLargos=nombres.filter(function(nombre) {
 console.log("5. Nombre + de 5 letras: " + nombresLargos);
 console.log("Todos los nombres: " + nombres);
 
-
 // EJERCICIO: salto de la rana
 
 function cant(x,y,d){
