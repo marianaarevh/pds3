@@ -216,7 +216,7 @@ console.log(nombre);
 console.log(raza);
 console.log(edad);
 
-// TAREA 5: FUNCIONES
+// TAREA 6: FUNCIONES
 
 // definir una funcion
 // funcion llamada 'saludar' que tome un nombre como parametro y devuelva un saludo a ese nombre
@@ -277,3 +277,60 @@ function cant(x,y,d){
 }
 
 console.log("saltos: ", cant(10,85,30));
+
+
+// TAREA 7: TEMPLATE STRING
+
+// 1. Combina dos variables usando template strings para crear una oración
+
+let nombrePersona="Juan";
+let profesionPersona="Arquitecto"
+console.log(`mi nombre es ${nombrePersona} y trabajo como ${profesionPersona}`)
+
+// 2. Calcula la suma de dos numeros y muestra el resultado usando template string
+
+function suma(num1,num2) {
+    console.log(`suma = ${num1+num2}`);
+}
+
+console.log(suma(5,10));
+
+// 3. Funcion Saludar, recibe como argumento un nombre y una funcion callback
+// la funcion llama la funcion callback pasandole el nombre como argumento
+
+function saludar(nombre, callback){ 
+    callback(nombre); 
+  }
+
+function saludos(nombre){
+    console.log(`Saludos a ${nombre}`);
+  }
+
+saludar("Saul",saludos);
+
+// 4. Funcion Operation, toma dos numeros y una funcion callback. La funcion debe 
+// llamar a la funcion callback y devolver el resultado de la operacion entre los 2 numeros
+function operation(num1,num2,callback){ 
+    callback(num1,num2); 
+}
+  
+function resta(num1,num2){
+    console.log(`resta = ${num1 + num2}`);
+}
+
+operation(10,2,suma);
+operation(10,2,resta);
+
+// 5. Funcion transformarTexto, recibe un texto y una funcion callback. La funcion 
+// debería llamar a la funcion callback con el texto como argumento, devolviendo
+// el texto en mayusculas
+
+function transformarTexto(texto, callback) {
+    callback(texto);
+}
+
+function mayusculas(texto) {
+    console.log(texto.toUpperCase());
+}
+
+transformarTexto("hola a todos", mayusculas);
